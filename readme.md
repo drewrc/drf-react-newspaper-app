@@ -9,7 +9,10 @@ Upon logging into the app, verified users can create new articles, edit their ex
 1. set up registration - done
 2. set up login - done 
 3. set up user permissions
-- users are able to 'submit' articles or 'save as draft'
+- users are able to 'submit' articles -done
+
+or 'save as draft'
+
 4. set up creation of articles by users 
 5. set up new view for authenticated users 
 6. admin is able to delete submitted articles 

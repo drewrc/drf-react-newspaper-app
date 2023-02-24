@@ -16,6 +16,7 @@ class Article(models.Model):
         (OPTION_D, 'esports'),
     ]
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=30, null=True)
     category = models.CharField(max_length=8, choices=OPTION_CHOICES, null=True)
     title = models.CharField(max_length=255)
     text = models.TextField()

@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import ProfileCreateAPIView
+from . import views
 
 app_name = 'accounts'
 
 urlpatterns = [
-    path('profiles/', ProfileCreateAPIView.as_view(), name="profile_add"),
+    path('profiles/', views.ProfileCreateAPIView.as_view(), name="profile_add"),
+    path('get-username/', views.get_username, name='get_username'),
 ]

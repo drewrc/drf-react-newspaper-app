@@ -24,10 +24,11 @@ class Article(models.Model):
     ARCHIVED = 'ARC'
 
     PHASE_CHOICES = [
-        (OPTION_A, 'SBM'),
-        (OPTION_B, 'PUB'),
-        (OPTION_C, 'REJ'),
-        (OPTION_D, 'ARC'),
+        (DRAFT, 'DFT'),
+        (SUBMITTED, 'SBM'),
+        (PUBLISHED, 'PUB'),
+        (REJECTED, 'REJ'),
+        (ARCHIVED, 'ARC'),
     ]
 
     author = models.ForeignKey(

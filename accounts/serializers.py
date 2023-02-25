@@ -4,7 +4,7 @@ from .models import Profile
 from dj_rest_auth.models import TokenModel
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user_email = serializers.ReadOnlyField(source = 'user.email')
+    user_name = serializers.ReadOnlyField(source = 'user.username')
     class Meta:
         model = Profile
         fields = '__all__'

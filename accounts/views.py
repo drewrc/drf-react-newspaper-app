@@ -6,9 +6,9 @@ from rest_framework import generics
 from .models import Profile
 from .serializers import ProfileSerializer
 
-@login_required
-def get_username(request):
-    return JsonResponse({'username': request.user.username})
+# @login_required
+# def get_username(request):
+#     return JsonResponse({'username': request.user.username})
 
 User = get_user_model()
 

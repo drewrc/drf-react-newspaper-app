@@ -81,6 +81,12 @@ class UserDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 #return error if phase value is not 'dft' or 'sbt'
         return Response({'message': 'Invalid phase value'}, status=status.HTTP_400_BAD_REQUEST)
 
+################filter drafts by user################# ------ >
+class UserDraftArticleListAPIView(UserArticleListCreateAPIView):
+    def get_queryset(self):
+        #can use methods of super class
+        queryset = super().get_queryset()
+        return queryset.filter(phase='DFT')
 
 
 ###################### VIEWS FOR ADMIN ##########################

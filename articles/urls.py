@@ -1,15 +1,26 @@
 from django.urls import path
-from .views import ArticleDetailAPIView, UserArticleListCreateAPIView, ArticleListAPIView, UserDetailAPIView, UserDraftArticleListAPIView
+from .views import AdminRejectedListView, AdminArchivedListView, AdminArchivedDetailView, AdminDetailView, AdminSubmittedListView, UserArticleListCreateAPIView, ArticleListAPIView, UserDetailAPIView, UserDraftArticleListAPIView
 
 app_name = 'articles'
 
 urlpatterns = [
-    # path('create/', ArticleCreateAPIView.as_view(), name="article_add"),
+    #admin view URLS
+    path('submitted/', AdminSubmittedListView.as_view(), name="articles_submitted"),
+    path('submitted/<int:pk>/', AdminDetailView.as_view(), name="article_submitted"),
+
+    path('archived/', AdminArchivedListView.as_view(), name='archived'),
+    path('archived/<int:pk>/', AdminArchivedDetailView.as_view(), name='archived_edit'),
+
+    path('rejected/', AdminRejectedListView.as_view(), name='rejected'),
+
+    #auth user view URLS
     path('create/', UserArticleListCreateAPIView.as_view(), name="article_create"),
     path('edit/<int:pk>/', UserDetailAPIView.as_view(), name="article_edit"),
-    path('<int:pk>/', ArticleDetailAPIView.as_view(), name="article_admin"),
-    path('list/', ArticleListAPIView.as_view(), name="article_list"),
     path('drafts/', UserDraftArticleListAPIView.as_view(), name='user_draft_articles'),
+    
+    #unauth view URLS
+    path('list/', ArticleListAPIView.as_view(), name="article_list"),
+   
 ]
 
 # api_v1/articles

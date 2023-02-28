@@ -74,25 +74,15 @@ function Archived() {
       ));
 
     return (
-            <Container>         
-                <Row>
+            <Container className="container-for-archived">         
+                <Row className="archive-container">
                     <div>
                         <h2>Archived</h2>
                     </div>
-                    <Col>
-                        <div className="user-drafts-container">
-                        Admin will be able to archieve old articles here  
-                        <div>
+                    <Col md={{ span: 6, offset: 3 }}>
+                        <div className="article-archive">
                             {articleHTML}
                         </div>
-                        </div>
-                    </Col>
-                    <Col md={3}>
-                    <h5>profile</h5>
-                    <div className="user-side-bar">
-                        side options go here?
-                        <p>user profile?</p>
-                    </div>
                     </Col>
                 </Row>
             </Container>

@@ -66,20 +66,22 @@ function AdminView({ id }) {
   ));
 
   return (
-    <Container>
+    <Container  className="admin-container">
       <Row>
         <div>
           <h2>Admin Profile</h2>
         </div>
-        <Col className="main" md={7}>
+        <Col className="main" md={{ span: 6, offset: 2 }}>
           <div>{articleHTML}</div>
           {/* {console.log(articleHTML[0].key)} */}
         </Col>
         <Col md={3}>
           <h5>profile</h5>
           <div className="user-side-bar">
-            side options go here?
-            <p>user profile?</p>
+            <div className="image-placeholder"></div>
+            <p>Name: </p>
+            <p>user profile</p>
+            <p>bio</p>
           </div>
         </Col>
       </Row>

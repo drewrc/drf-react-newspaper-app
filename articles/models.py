@@ -37,10 +37,11 @@ class Article(models.Model):
         max_length=8, choices=CATEGORY_CHOICES, blank=True, null=True)
     title = models.CharField(max_length=255)
     text = models.TextField()
-    img = models.ImageField(upload_to='images/')
+    img = models.ImageField(upload_to='images/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
     is_published = models.BooleanField(default=False)
     phase = models.CharField(max_length=20, choices=PHASE_CHOICES, blank=True)
+
     def __str__(self):
         return self.title[:50]

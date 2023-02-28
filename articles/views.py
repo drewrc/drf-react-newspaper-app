@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from rest_framework import status
 from .models import Article
 from .serializers import ArticleSerializer
-from .permissions import IsAuthorOrReadOnly, ReadOnly
+from .permissions import IsAuthorOrReadOnly, AuthorOnly
 
 
 ################ VIEWS FOR AUTHENTICATED USER ###################
@@ -109,7 +109,7 @@ class ArchivedListView(generics.ListAPIView):
 class UserRejectedListView(generics.ListAPIView):
     queryset = Article.objects.filter(phase='REJ')
     serializer_class = ArticleSerializer
-    permission_classes = (IsAuthorOrReadOnly,)
+    permission_classes = (AuthorOnly,)
 
 
 class UserRejectedDetailView(generics.RetrieveUpdateDestroyAPIView):

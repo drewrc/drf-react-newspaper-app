@@ -6,10 +6,12 @@ import Article from "../structures/Article";
 import React, { useState, useEffect } from "react";
 import Searchbar from "../structures/SearchBar";
 import LogOut from "../auth/LogOutView";
+import { Link, NavLink } from "react-router-dom";
 
 function Home() {
   const [articles, setArticles] = useState([]);
   const [category, setCategory] = useState("");
+
 
   const handleCategory = (c) => {
     setCategory(c);
@@ -47,35 +49,35 @@ function Home() {
     <div>
       <Container className="header-top">
         <Row>
-
-            <div className="header">
-              <div className="header-border">
-                <h1 id="main-header">HackPulse News</h1>
-                <img className="main-banner" />
-              </div>
+          <div className="header">
+            <div className="header-border">
+              <h1 id="main-header">HackPulse News</h1>
+              <img className="main-banner" />
             </div>
-     
+          </div>
         </Row>
         <Row>
           <div className="categories">
-                <a id="article-nav" onClick={() => handleCategory("technews")}>
-                  {" "}
-                  tech news
-                </a>
-                <a id="article-nav" onClick={() => handleCategory("software")}>
-                  {" "}
-                  software
-                </a>
-                <a id="article-nav" onClick={() => handleCategory("gaming")}>
-                  {" "}
-                  gaming
-                </a>
-                <a id="article-nav" onClick={() => handleCategory("esports")}>
-                  {" "}
-                  e-sports
-                </a>
-              
-              </div>
+            <a id="article-nav" onClick={() => handleCategory("technews")}>
+              {" "}
+              tech news
+            </a>
+            <a id="article-nav" onClick={() => handleCategory("software")}>
+              {" "}
+              software
+            </a>
+            <a id="article-nav" onClick={() => handleCategory("gaming")}>
+              {" "}
+              gaming
+            </a>
+            <a id="article-nav" onClick={() => handleCategory("esports")}>
+              {" "}
+              e-sports
+            </a>
+            <Link to="archived" id="nav" className="hover-underline-animation">
+              Archived{" "}
+            </Link>
+          </div>
         </Row>
       </Container>
       <Container className="main-container">
@@ -119,6 +121,8 @@ function Home() {
           </Col>
         </Row>
       </Container>
+
+      {/* <div className="fixed-bottom footer">HackPulse News 2023</div> */}
     </div>
   );
 }

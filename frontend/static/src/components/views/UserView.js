@@ -7,7 +7,7 @@ import EditRejected from "../structures/EditRejected";
 import "../styles/userview.css";
 import Cookies from "js-cookie";
 import NewContent from "../structures/NewContentView";
-
+import { Link } from "react-router-dom";
 
 
 function Userview() {
@@ -97,6 +97,39 @@ function Userview() {
 //   { span: 4, offset: 1 }
   return (
     <>
+            {/* <nav className="nav-bar" id="nav-bar">
+          <Link to="home"
+            id="nav"
+            className="hover-underline-animation"
+          >
+            Home{" "}
+          </Link>
+          <Link to="userview"
+            id="nav"
+            className="hover-underline-animation"
+          >
+            Create Content
+            {" "}
+          </Link>
+          <Link to="login"
+            id="nav"
+            className="hover-underline-animation"
+          >
+            Login{" "}
+          </Link>
+          <Link to="register"
+            id="nav"
+            className="hover-underline-animation"
+          >
+            Register{" "}
+          </Link>
+          <Link to="logout"
+            id="nav"
+            className="hover-underline-animation"
+          >
+            Logout{" "}
+          </Link>
+        </nav> */}
       <Container>
         <Row>
           <div>

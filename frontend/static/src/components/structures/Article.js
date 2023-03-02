@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/esm/Row';
 function Article({ id, category, title, user_name, img, text }) {
   
   return (
-  
     <div className='article-container'>
       <div key={id}>
         <p> <img className='img-header' src={img} /></p>

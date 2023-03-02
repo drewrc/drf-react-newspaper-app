@@ -46,11 +46,9 @@ class UserDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ArticleSerializer
     permission_classes = (IsAuthorOrReadOnly,)
 # filter articles based off user // drf-built-in method
-
     def get_queryset(self):
         return Article.objects.filter(author=self.request.user)
 # allows user to edit // drf-built-in method
-
     def perform_update(self, serializer):
         serializer.save(author=self.request.user)
 

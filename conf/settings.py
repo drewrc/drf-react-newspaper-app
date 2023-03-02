@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+#import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    # "whitenoise.runserver_nostatic",
     'django.contrib.staticfiles',
 
     'rest_framework',
@@ -98,6 +100,12 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+#if os.environ.get('DATABASE_URL'):
+#   DATABASES = {
+#   'default': dj_database_url.config(default=os.environ['DATABASE_URL'])
+#   }
+#else: 
 
 DATABASES = {
     'default': {
@@ -171,3 +179,6 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/static')
 REST_AUTH = {
     'TOKEN_SERIALIZER': 'accounts.serializers.TokenSerializer',
 }
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

@@ -21,7 +21,6 @@ body {
 }
 @media only screen and (max-width: 750px) {
   .header-border {
-
   max-width: 100%;
   max-height: 80%;
   margin-left: 0px;
@@ -194,7 +193,7 @@ h4 {
     bottom
     #ec0000    
     no-repeat; 
-  background-size:100% 5px ;
+    background-size:100% 5px ;
     /* border-image: linear-gradient(140deg,rgba(187, 137, 1, 0.1), rgb(37, 0, 56, 0.2) ); */
     border-bottom: 2px;
     border-style: solid;

@@ -66,15 +66,6 @@ function NewContent() {
     console.log({ data });
   };
 
-//   const handleDraftClick = (e) => {
-//     e.preventDefault();
-//     setPhase("DFT");
-//   };
-//   const handleSubmitClick = (e) => {
-//     e.preventDefault();
-//     setPhase("SBT");
-//   };
-
   return (
     <>
           <Col>

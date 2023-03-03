@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import Form from "react-bootstrap/Form";
 
 
-function EditArticle({ id, category, title, user_name, img, text }) {
+function EditArticle({ id, category, title, user_name, img, text, handleDeleteEdit }) {
     const [editContent, setEditContent] = useState({ title, text, img });
     const [phase, setPhase] = useState("SBM")
     const [file, setFile] = useState(img);
@@ -100,7 +100,7 @@ function EditArticle({ id, category, title, user_name, img, text }) {
               <p>
                 <button onClick={() => setPhase("DFT")}>Save Edit</button>
                 <button onClick={() => setPhase("SBM")}>Submit</button>
-                {/* <button onClick={handleDelete}>Delete</button> */}
+                <button onClick={handleDeleteEdit}>Delete</button>
               </p>
             </div>  
           </div>

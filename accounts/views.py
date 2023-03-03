@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from rest_framework import generics
 from .models import Profile
-from .serializers import ProfileSerializer
-
+from .serializers import ProfileSerializer, TokenSerializer
+from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 User = get_user_model()
 
@@ -17,8 +17,9 @@ class ProfileCreateAPIView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user)
 
 class UserListAPIView(generics.ListAPIView):
-    queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
-    # def get_serializer_class(self):
-    #     return self.serializer_class
+    def get_queryset(self):
+        return Profile.objects.all()
+

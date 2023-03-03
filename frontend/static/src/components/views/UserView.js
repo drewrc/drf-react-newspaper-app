@@ -61,8 +61,9 @@ const [rejectedArticles, setRejectedArticles] = useState([]);
   const articleHTML = articles.map((article) => (
     <div key={article.id}>
     <EditArticle {...article} 
+     handleDeleteEdit={() => handleDeleteEdit(article.id)}
     />
-      <button onClick={() => handleDeleteEdit(article.id)}>Delete</button>
+      {/* <button onClick={() => handleDeleteEdit(article.id)}>Delete</button> */}
     </div>
   ));
 
@@ -83,8 +84,9 @@ const [rejectedArticles, setRejectedArticles] = useState([]);
   const rejectedHTML= rejectedArticles.map((article) => (
     <div key={article.id}>
     <EditRejected key={article.id} {...article} 
+     handleDeleteReject={() => handleDeleteReject(article.id)}
     />
-   <button onClick={() => handleDeleteReject(article.id)}>delete</button>
+   {/* <button onClick={() => handleDeleteReject(article.id)}>delete</button> */}
     </div>
   ));
 
@@ -102,7 +104,6 @@ const [rejectedArticles, setRejectedArticles] = useState([]);
     <>
             <Row id="category-nav">
           <div className="categories">
-          {/* <button onClick={() => setDisplay("new")}>New Content</button> */}
           <button onClick={() => setDisplay("article")}>My Drafts</button>
           <button onClick={() => setDisplay("rejected")}>Rejected Articles</button>
           </div>
@@ -124,14 +125,7 @@ const [rejectedArticles, setRejectedArticles] = useState([]);
             </Col>
         <Col md={5}>
           {content}
-            {/* <h5>Drafts</h5>
-            <div>{articleHTML}</div>
           </Col>
-          <Col md={3}>
-            <h5>Rejected articles</h5>
-            <div>{rejectedHTML}</div> */}
-          </Col>
-          
         </Row>
       </Container>
     </>

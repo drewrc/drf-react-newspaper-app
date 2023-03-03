@@ -49,15 +49,15 @@ img:hover {
   
   .hover-underline-animation::after {
     content: '';
+    bottom: 0;
+    left: 0;
     position: absolute;
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: 0;
-    left: 0;
     background-color: #ab61b6;
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.35s ease-out;
   }
   
   .hover-underline-animation:hover::after {

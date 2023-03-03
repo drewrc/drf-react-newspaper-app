@@ -4,6 +4,7 @@ import Container from "react-bootstrap/esm/Container"
 import Article from "../structures/Article";
 import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
+import Carousel from "react-bootstrap/Carousel";
 
 function Archived() {
     const [articles, setArticles] = useState([]);
@@ -63,14 +64,13 @@ function Archived() {
       };
 
       const articleHTML = articles.map((article) => (
-        <div key={article.id} className="submitted-articles-body">
+        <Carousel.Item key={article.id}>
+        <div className="submitted-articles-body">
         <Article 
         {...article} 
         />
-  
-        {/* <button onClick={() => handleUpdateArticle(article.id, 'PUB')}>publish</button>
-        <button onClick={() => handleUpdateArticle(article.id, 'REJ')}>delete</button> */}
         </div>
+        </Carousel.Item>
       ));
 
     return (
@@ -81,7 +81,7 @@ function Archived() {
                     </div>
                     <Col md={{ span: 6, offset: 3 }}>
                         <div className="article-archive">
-                            {articleHTML}
+                        <Carousel>{articleHTML}</Carousel>
                         </div>
                     </Col>
                 </Row>

@@ -50,13 +50,17 @@ body {
 #category-nav {
   min-width: 100vw;
   position: relative;
-
 }
 
 .admin-container {
   height: 100vh;
 }
 
+.admin-controls {
+  height: 20%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
 
 .container-for-archived {
   align-items: center;
@@ -79,6 +83,8 @@ body {
   p.side-bar {
     margin-right: 20px;
   }
+
+ 
 
   h4 {
   position: relative;
@@ -174,7 +180,7 @@ body {
   .article-container {
     font-family: 'Kanit', sans-serif;
     background-color: rgb(228, 230, 231);
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
   .main-article-container {
     height: 100vh;

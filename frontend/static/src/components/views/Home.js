@@ -7,6 +7,8 @@ import React, { useState, useEffect } from "react";
 import Searchbar from "../structures/SearchBar";
 import LogOut from "../auth/LogOutView";
 import { Link, NavLink } from "react-router-dom";
+import Carousel from 'react-bootstrap/Carousel';
+
 
 function Home() {
   const [articles, setArticles] = useState([]);
@@ -29,10 +31,6 @@ function Home() {
     getArticles();
   }, []);
 
-  const articleHTML = articles.map((article) => (
-    <Article key={article.id} {...article} />
-  ));
-
   const filterCategory = (category) => {
     if (category.length === 0) {
       return articles.map((article) => (
@@ -47,16 +45,7 @@ function Home() {
 
   return (
     <div>
-      <Container className="header-top">
-        <Row>
-          <div className="header">
-            <div className="header-border">
-              <h1 id="main-header">HackPulse News</h1>
-              <img className="main-banner" />
-            </div>
-          </div>
-        </Row>
-        <Row>
+        <Row id="category-nav">
           <div className="categories">
             <a id="article-nav" onClick={() => handleCategory("technews")}>
               {" "}
@@ -74,48 +63,88 @@ function Home() {
               {" "}
               e-sports
             </a>
-            <Link to="archived" id="nav" className="hover-underline-animation">
-              Archived{" "}
-            </Link>
           </div>
         </Row>
+      <Container>
+
+
       </Container>
-      <Container className="main-container">
+      <Container id="main-width-container" className="main-container">
         <Row>
-          <Col className="main" md={7}>
-            <div>{filterCategory(category)}</div>
+          <Col md={3}>
+            
+            <Col>
+          <div className="left-text-box">
+      
+                <div className="side-column">
+                {articles.slice(3, 6).map((article) => (
+                <div key={article.id}>
+                <img src={article.img} alt={article.title} style={{width: '150px',}} />
+                </div>
+                ))}
+    
+              </div>
+              <div className="side-column-2">
+              {articles.slice(6, 9).map((article) => (
+                <div key={article.id}>
+                <img src={article.img} alt={article.title} style={{width: '150px',}} />
+                </div>
+                ))}
+                </div>
+            </div> 
+              
+              </Col> 
+
+              <Col>
+              <div className="left-text-box">
+      
+      <div className="side-column">
+      {articles.slice(9, 12).map((article) => (
+      <div key={article.id}>
+      <img src={article.img} alt={article.title} style={{width: '150px',}} />
+      </div>
+      ))}
+
+    </div>
+    <div className="side-column-2">
+    {articles.slice(12, 15).map((article) => (
+      <div key={article.id}>
+      <img src={article.img} alt={article.title} style={{width: '150px',}} />
+      </div>
+      ))}
+      </div>
+  </div> 
+              </Col>      
           </Col>
-          <Col className="side-bar" md={{ span: 4, offset: 1 }}>
-            <div className="side-header">
-              <div className="side-text-box">
-                <h6>Search Articles</h6>
+          <Col className="main" md={5}>
+            <div className="main-article-container">
+              <Carousel>
+                  {filterCategory(category).map((article) => (
+                    <Carousel.Item key={article.props.id}>
+                      {article}
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
               </div>
-            </div>
+          </Col>
+          <Col className="side-bar" md={{ span: 4 }}>
+     
             <Row>
-              <Searchbar />
+
               <div className="side-text-box">
-                <h4>Related Articles</h4>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-              </div>
-              <div className="side-text-box">
-                <h4>Related Articles</h4>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-              </div>
-              <div className="side-text-box">
-                <h4>Related Articles</h4>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
-                <p>text text text </p>
+                <Row md={12} id="related-header"><h10>Related Articles</h10></Row>
+                <Row>
+                <Col md={12}>
+                <div id="related-articles">
+                {articles.slice(0, 2).map((article) => (
+                <div key={article.id}>
+                <img src={article.img} alt={article.title} style={{width: '100%', height: '250px'}} />
+                <p className="article-name">{article.title}</p>
+                </div>
+                ))}
+                </div>
+                </Col>
+                </Row>
               </div>
             </Row>
           </Col>

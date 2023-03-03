@@ -38,9 +38,11 @@ function LoginView() {
   };
 
   return (
-    <Container className="login-container">
+    // <Container id="login">
+    <>
+    <h2>Welcome to HackPulse</h2>
+    <Container id="login-container">
       <Row>
-        <h2>Welcome to HackPulse</h2>
         <h3>Log in below</h3>
       </Row>
       <Row>
@@ -78,6 +80,7 @@ function LoginView() {
         </Col>
       </Row>
     </Container>
+  </>
   );
 }
 

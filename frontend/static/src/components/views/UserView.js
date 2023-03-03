@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 
 function Userview() {
 
-
-    const [articles, setArticles] = useState([]);
-    const [rejectedArticles, setRejectedArticles] = useState([]);
+const [display, setDisplay] = useState("articles"); 
+const [articles, setArticles] = useState([]);
+const [rejectedArticles, setRejectedArticles] = useState([]);
 
   useEffect(() => {
     const getArticles = async () => {
@@ -88,54 +88,30 @@ function Userview() {
     </div>
   ));
 
+  let content;
+  switch (display) {
+    case "article":
+      content = articleHTML;
+      break;
+    case "rejected":
+      content = rejectedHTML;
+      break;
+  }
 
-
-
-
-
-  // <button onClick={() => handleDeleteArticle(article.id)}>delete</button>
-//   { span: 4, offset: 1 }
   return (
     <>
-            {/* <nav className="nav-bar" id="nav-bar">
-          <Link to="home"
-            id="nav"
-            className="hover-underline-animation"
-          >
-            Home{" "}
-          </Link>
-          <Link to="userview"
-            id="nav"
-            className="hover-underline-animation"
-          >
-            Create Content
-            {" "}
-          </Link>
-          <Link to="login"
-            id="nav"
-            className="hover-underline-animation"
-          >
-            Login{" "}
-          </Link>
-          <Link to="register"
-            id="nav"
-            className="hover-underline-animation"
-          >
-            Register{" "}
-          </Link>
-          <Link to="logout"
-            id="nav"
-            className="hover-underline-animation"
-          >
-            Logout{" "}
-          </Link>
-        </nav> */}
+            <Row id="category-nav">
+          <div className="categories">
+          {/* <button onClick={() => setDisplay("new")}>New Content</button> */}
+          <button onClick={() => setDisplay("article")}>My Drafts</button>
+          <button onClick={() => setDisplay("rejected")}>Rejected Articles</button>
+          </div>
+        </Row>
       <Container>
         <Row>
           <div>
             <h2>Content Creator Dashboard</h2>
           </div>
-
           <Col className="side-bar" md={2}>
             <h5>user profile</h5>
             <div className="user-side-bar">
@@ -143,17 +119,17 @@ function Userview() {
               <p>user profile?</p>
             </div>
           </Col>
-          <Col className="main" id="user-main" md={3}>
+          <Col className="main" id="user-main" md={5}>
             <NewContent />
             </Col>
-        <Col md={4}>
-            <h5>Drafts</h5>
+        <Col md={5}>
+          {content}
+            {/* <h5>Drafts</h5>
             <div>{articleHTML}</div>
-            {/* <div>{rejectedArticles}</div> */}
           </Col>
           <Col md={3}>
             <h5>Rejected articles</h5>
-            <div>{rejectedHTML}</div>
+            <div>{rejectedHTML}</div> */}
           </Col>
           
         </Row>

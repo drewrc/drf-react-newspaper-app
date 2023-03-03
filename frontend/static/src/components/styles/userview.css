@@ -8,16 +8,19 @@ body {
 
 }
 .header-border{
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  text-align: center;
-  border-width: 10px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* align-self: center; */
+  /* text-align: center; */
+  border-width: 20px;
   border-style: solid;
   border-image: linear-gradient(to right, #f5ff6a, darkorchid) 1;
-  max-width: 100%;
-  margin-left: 80px;
-  margin-right: 80px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 20px; */
+  
+  
 }
 @media only screen and (max-width: 750px) {
   .header-border {
@@ -36,10 +39,20 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
+  background-color: rgba(46, 43, 46, 0.5);
   background-image: linear-gradient(240deg, rgba(81, 36, 83, 0.4), rgb(1, 2, 19, 0.9));
   text-transform: uppercase;
-  padding: 30px
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: auto;
+  border-bottom: 5px solid rgba(22, 19, 54, 0.1);
 }
+#category-nav {
+  min-width: 100vw;
+  position: relative;
+
+}
+
 .admin-container {
   height: 100vh;
 }
@@ -79,19 +92,74 @@ body {
     padding-right: 30px;
     margin-top: 20px;
   }
+  .left-text-box {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(10px 10px 10px #111113);
+    background-image: linear-gradient(
+      160deg,
+      rgba(166, 142, 182, 0.2),
+      rgba(13, 5, 20, 0.2)
+    );
+  }
 
+
+.left-text-box img {
+  padding: 10px;
+}
   .side-header {
     text-align: center;
     padding-right: 40px;
   }
 
-.side-text-box {
-  background-image: linear-gradient(160deg, rgb(43, 38, 75, 0.2), rgb(1, 2, 19, 0.2));
-  margin-right: -45px;
-  text-align: center;
-  padding: 30px;
-  margin-bottom: 35px;
+  #related-header {
+    padding: 20px;
+    font-family: 'Gajraj One', cursive;
+    font-size: 25px;
+    width: 100%;
+    color: white;
+    filter: drop-shadow(10px 10px 10px #111113);
+    background: -webkit-linear-gradient(100deg, rgb(243, 243, 5, 0.9), rgba(225, 65, 240, 0.9));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    background-size:100% 5px ;
+  }
+
+#related-articles {
+  width: 100%;
+  align-self: center;
 }
+.article-name {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid ;
+  color:rgba(248, 212, 245, 0.8);
+  font-weight: bold;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(10px 10px 10px #111113);
+  background-image: linear-gradient(
+    160deg,
+    rgba(166, 142, 182, 0.2),
+    rgba(13, 5, 20, 0.2)
+  );
+  margin-bottom: 35px;
+  /* margin-left: 50px; */
+}
+
   h6 {
     border-bottom: 1px solid rgb(117, 119, 122);
   }
@@ -100,14 +168,20 @@ body {
   }
   .main-banner {
     width: 95vw;
-    max-height: 30vh;
+    max-height: 40vh;
     
   }
   .article-container {
     font-family: 'Kanit', sans-serif;
     background-color: rgb(228, 230, 231);
-    margin-bottom: 60px;
+    margin-bottom: 100px;
   }
+  .main-article-container {
+    height: 100vh;
+    filter: drop-shadow(10px 10px 10px #111113);
+    margin-bottom: 100px;
+  }
+
   .text {
     font-family: 'Comfortaa', cursive;
     padding-left: 20px;
@@ -118,10 +192,21 @@ body {
     color: yellow;
   }
 
-  .container {
-    min-width: 90vw;
+  #login-container {
+    min-width: 60vw;
     margin-top: 40px;
+    margin-bottom: 80px;
+   
   }
+
+  @media only screen and (max-width: 750px) {
+    #login-container {
+      /* font-size: 70px; */
+      min-width: 80vw;
+      height: 50vh;
+    }
+  }
+
   .col {
    max-height: fit-content;
   }
@@ -147,6 +232,7 @@ body {
     border-radius: 3px;
     bottom: 10px;
   }
+
   h1 {
     background: -webkit-linear-gradient(360deg,#e1ff00, #c100d6);
     background-clip: text;
@@ -154,7 +240,12 @@ body {
     -webkit-text-fill-color: transparent;
   }
 
+  img {
+    object-fit: cover;
+  }
+
 .title {
+  padding: 20px;
   text-align: center;
   font-family: 'Tilt Warp', cursive;
   font-size: 22px;
@@ -191,50 +282,65 @@ h4 {
     linear-gradientlinear-gradient(to left, 140deg,rgba(187, 137, 1, 0.1), rgb(37, 0, 56, 0.2) )
     left 
     bottom
-    #ec0000    
+    #ee0000    
     no-repeat; 
     background-size:100% 5px ;
     /* border-image: linear-gradient(140deg,rgba(187, 137, 1, 0.1), rgb(37, 0, 56, 0.2) ); */
-    border-bottom: 2px;
-    border-style: solid;
+    /* border-bottom: 2px;
+    border-style: solid; */
     background-image: url("nebula.png"); 
     background-size: 100%;
-    height: 50vh;
+    height: 10vh;
     position: relative;
     top: -1px;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 60px;
-    padding-top: 60px;
+    padding: 100px;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 100vw;
   }
   @media only screen and (max-width: 750px) {
     .header {
-      font-size: 70px;
-      height: 50vh;
+      /* font-size: 70px; */
+      height: 5vh;
+      min-width: 100vw;
+
     }
   }
   .header-top {
-    margin-bottom: -330px;
+    margin-top: -40px;
+    /* margin-bottom: -330px; */
   }
 
   #main-header {
-    font-size: 100px;
-    margin-top: 30px;
-    padding: 10px;
+    font-size: 70px;
+    position: relative;
+    bottom: 30px;
+    filter: drop-shadow(10px 10px 10px #111113);
+    /* padding: 10px; */
     font-family: 'Tilt Warp', cursive;
-    /* text-transform: uppercase; */
+  }
+
+  #override {
+    min-width: 100vw;
   }
   
+  #main-width-container {
+    min-width: 100vw;
+  }
   @media only screen and (max-width: 1000px) {
     #main-header {
-      font-size: 60px;
-      padding-left: 20px;
-      padding-right: 20px;
+       font-size: 60px;
+      position: relative;
+      bottom: 60px;
+      /*padding-left: 20px;
+      padding-right: 20px; */
     }
   }
-.main-container {
-  margin-top: 380px;
+.container {
+  margin-top: 30px;
+  width: 100vw;
 }
 
 .user-drafts-container {
@@ -243,6 +349,7 @@ h4 {
 
 .user-side-bar {
   background-color: #ffffff;
+  filter: drop-shadow(10px 10px 10px #111113);
 }
 
 #article-nav {

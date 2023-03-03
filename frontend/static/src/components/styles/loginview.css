@@ -1,12 +1,21 @@
 
  
 
-  .login-container {
-    min-width: 70%;
+#login-container {
+    width: 30px;
     color: rgb(217, 193, 220);
+    background-image: linear-gradient(290deg, rgba(192, 189, 169, 0.1), rgba(224, 159, 224, 0.1));
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  #login {
+    /* background-color: #c100d6; */
+    min-height: 100vh;
+    min-width: 100vh;
   }
   .col {
-    min-height: 100vh;
+    min-height: 50vh;
   }
   h2 {
     font-family: 'Kanit', sans-serif;
@@ -15,7 +24,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
-    padding: 30px;
+    padding-top: 40px;
   }
   h3 {
     font-family: 'Bebas Neue', cursive;
@@ -25,6 +34,8 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
     text-transform: uppercase;
+    padding-top: 30px;
+    margin-bottom: -20px;
   }
   h4 {
     font-size: 12px;
